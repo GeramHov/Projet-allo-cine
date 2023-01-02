@@ -14,33 +14,43 @@ fetch("./data/moovies.json")
           return `
           <div class="container-fluid">
             <div class="row align-items-start">
-              <div class="col col-lg-3 col-md-3 col-sm-1">
+              <div class="col col-lg-3 col-md-2 col-sm-1">
               </div>
-            <div class="col col-lg-6 col-md-6 col-sm-10 my-2">
-              <div class="card">
+            <div class="col col-lg-6 col-md-8 col-sm-10 my-2">
+              <div class="card p-3">
                  <div class="card-body bg-light">
                    <div class="row">
-                     <div class="col col-lg-4 col-md-6 col-sm-4">
+                     <div class="col col-lg-4 col-md-6 col-sm-4 p-0">
                         <img class="film-photo" src="${film.Poster}">
                      </div>
                      <div class="col col-lg-8 col-md-6 col-sm-8">
-                        <h5 class="card-title mb-3">"${film.Title}"</h5>
-                           <p class="card-text py-4 font-italic">
+                        <h4 class="card-title pb-2">"${film.Title}" ${film.Year}</h4>
+                           <p class="card-text text-secondary">
                               ${film.Plot}
+                          </p>
+                          <p class="text-secondary">
+                          Actors: ${film.Actors}
+                          </p>
+                          <p class="text-secondary">
+                          Duration: ${film.Runtime}
                           </p>
                      <div class="col d-flex">
                      <i class="fa-sharp py-3 fa-solid fa-star text-warning"></i>
                           <p class="text-secondary mx-1 py-3">${film.imdbRating}</p>
+                          <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-8">
                           ${
                             film.Images.map((image, index)=>{
                               if(index < 3){
                                 return ` 
-                                <img class="film-photo ms-2" src="${image}" height=40% width=20%>
+                                <img class="film-photo ms-2" src="${image}" height=85% width=20%>
                                 `
                               }
                             }).join("")
 
                           }
+                          </div>
+                          </div>
                      </div>
                   </div>
               </div>
@@ -49,7 +59,7 @@ fetch("./data/moovies.json")
                  </div>
               </div>
             </div>
-          <div class="col col-lg-3 col-md-3 col-sm-1">
+          <div class="col col-lg-3 col-md-2 col-sm-1">
             </div>
             </div>
       </div>
