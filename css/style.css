@@ -1,3 +1,4 @@
+/* Adding background image to our content below */
 body { 
     background: url(https://img.tagvenue.com/upload/cc/b1/1537-cinema-1-room.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -6,12 +7,14 @@ body {
     background-size: cover;
   }
 
+/* Adding hover transform style below */
 .card:hover {
     transform: scale(1.05);
     transition: 0.8s;
     box-shadow: 0 0 15px rgba(0, 0, 0, 1.2);
 }
 
+/* Styling our scroll button below */
 .back-to-top {
   position: fixed;
   right: -100px;
